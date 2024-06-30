@@ -79,6 +79,14 @@ document.querySelector(".js-product-grid")
           });
         }
 
-        console.log(cart);
+        // keep track of total quantity in the cart array
+        let cartQuantity = 0;
+
+        cart.forEach(cartItem => {
+          cartQuantity += cartItem.quantity;
+        });
+
+        document.querySelector(".js-cart-quantity")
+          .innerHTML = cartQuantity;
       });
     });
